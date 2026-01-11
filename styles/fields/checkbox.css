@@ -1,0 +1,11 @@
+.terms-wrapper {
+    margin-top: 3rem;
+    display: flex;
+    gap: .75rem;
+    align-items: flex-start;
+
+    & strong {
+        font-weight: 500;
+        color: var(--text-highlight);
+    }
+}

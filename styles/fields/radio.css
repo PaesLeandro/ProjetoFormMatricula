@@ -1,0 +1,86 @@
+/* Alinha os rádios lado a lado */
+label+.radio-wrapper {
+    margin-top: 1rem;
+}
+
+.radio-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    gap: 1rem;
+}
+
+/* Card do rádio sem borda externa */
+.radio-inner {
+    position: relative;
+    border: none;
+    /* remove a borda externa */
+    border-radius: .5rem;
+}
+
+/* Input cobre todo o card (clicável) */
+.radio-inner input[type="radio"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Ícone em cima e texto embaixo */
+.radio-inner label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: 1.25rem 1rem;
+    border-radius: .5rem;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Ícone de estado do radio (default) */
+.radio-inner label::before {
+    content: "";
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    width: 1rem;
+    height: 1rem;
+    background: url(../../assets/icons/radio-default.svg) no-repeat center/contain;
+}
+
+/* Hover/Focus: troca para ícone de hover */
+.radio-inner input[type="radio"]:hover+label::before,
+.radio-inner input[type="radio"]:focus-visible+label::before {
+    background-image: url(../../assets/icons/radio-hover.svg);
+}
+
+/* Checked: ícone marcado */
+.radio-inner input[type="radio"]:checked+label::before {
+    background-image: url(../../assets/icons/radio-checked.svg);
+}
+
+/* Tamanhos dos ícones (se usar <img> dentro do label) */
+.radio-inner label img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.radio-inner label span {
+    font: var(--text-sm);
+    color: var(--text-primary);
+}
+
+/* Estados de foco/hover/selecionado (sem borda fixa) */
+.radio-inner input[type="radio"]:hover+label,
+.radio-inner input[type="radio"]:focus+label {
+    outline: 2px solid var(--stroke-highlight);
+    background: var(--surface-secondary);
+}
+
+.radio-inner input[type="radio"]:checked+label {
+    outline: 2px solid var(--stroke-highlight);
+    background: var(--surface-secondary);
+}

@@ -1,3 +1,4 @@
+/* global.css */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 
 :root {
     --font-family: 'Poppins', sans-serif;
-    --text: 400 4.5rem var(--font-family);
+    --text: 400 1rem var(--font-family);
     --text-sm: 400 0.875rem var(--font-family);
 
     --text-primary: #292524;
@@ -16,25 +17,29 @@
 
     --surface-primary: #FFFFFF;
     --surface-secondary: #FEE7D6;
+    --surface-disabled: #E7E5E4;
+    --surface-default: #F5F5F5;
 
     --stroke-default: #D6D3D1;
     --stroke-highlight: #F5431C;
     --semantic-error: #DC2626;
-    
 }
 
 body {
-    overflow: hidden;
-
-    font:  var(--text);
+    background-color: var(--surface-primary);
+    font: var(--text);
     color: var(--text-secondary);
 }
 
-h1, h2 {
-    color: var(--text-primary);
+.flex {
+    display: flex;
+    gap: 1.25rem;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
 }
