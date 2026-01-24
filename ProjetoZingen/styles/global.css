@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  /* Brand Colors */
+  --brand-primary-color: #f7B733;
+  --brand-secondary-color: #FC4A1A;
+  --brand-gradient: linear-gradient(90deg, var(--brand-secondary-color) 0%, var(--brand-primary-color) 100%);
+
+  /*Base Colors */
+  --bg-color: #09090B;
+  --surface-color: #18181b;
+  --stroke-color: #27272A;
+  --text-color-secondary: #A1A1AA;
+  --text-color-primary: #f4f4f5;
+
+  /* Font family */
+  --ff-sans: 'Inter', sytem-ui, sans-serif;
+
+  /* Font Weights */
+  --fw-base: 400;
+  --fw-md: 500;
+  --fw-bold: 800
+
+  /* Font sizes */
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2.5rem;
+
+  /* Spacing */
+  --px-lg: 1.5rem;
+  --py-base: 1rem;
+  --py-xl: 3rem;
+  --py-lg: 1.5rem;
+
+}
+
+html {
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-base);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--text-color-primary);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+h1,
+h2, 
+h3 {
+  line-height: 1.2;
+  color: var(--text-color-primary);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: var(--fs-2xl);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+ul[role="list"] {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+@media (width >= 80em) {
+  :root {
+    --fs-lg: 2rem;
+    --fs-xl: 3rem;
+    --fs-2xl: 4rem;
+    --px-lg: 2rem;
+    --py-base: 1.5rem;
+    --py-xl: 5rem;
+    --py-lg: 2rem;
+  }
+}
+@media (min-width: 376px) and (max-width: 490px) {
+  :root {
+    --fs-lg: calc(1.25rem / 0.76);
+    --fs-xl: calc(1.5rem / 0.76);
+    --fs-2xl: calc(2.5rem / 0.76);
+    --px-lg: calc(1.5rem / 0.76);
+    --py-base: calc(1rem / 0.76);
+    --py-xl: calc(3rem / 0.76);
+    --py-lg: calc(1.5rem / 0.76);
+  }
+}
+@media (min-width: 490px) and (max-width: 48rem) {
+  :root {
+    --fs-lg: calc(1.25rem / 0.5);
+    --fs-xl: calc(1.5rem / 0.5);
+    --fs-2xl: calc(2.5rem / 0.5);
+    --px-lg: calc(1.5rem / 0.5);
+    --py-base: calc(1rem / 0.5);
+    --py-xl: calc(3rem / 0.5);
+    --py-lg: calc(1.5rem / 0.5);
+  }
+}

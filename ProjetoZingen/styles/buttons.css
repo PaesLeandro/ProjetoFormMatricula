@@ -1,0 +1,114 @@
+.btn {
+  --btn-bg-color: var(--text-color-primary);
+  --btn-color: var(--bg-color);
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-radius: .5rem;
+  font: var(--fw-md) var(--fs-base)/1.5 var(--ff-sans);
+  cursor: pointer;
+
+  background: var(--btn-bg-color);
+  color: var(--btn-color);
+}
+
+.btn:hover {
+  --btn-bg-color: var(--brand-gradient);
+  --btn-color: var(--surface-color);
+  background: var(--btn-bg-color);
+  color: var(--btn-color);
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+.btn-sm {
+  padding: .5rem 1rem;
+  font-size: var(--fs-sm);
+}
+
+.btn-md {
+  padding: .75rem 1.5rem;
+  font-size: var(--fs-base);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.btn[aria-label] {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    inset: 1px;
+    background-color: var(--bg-color);
+  }
+  &::after {
+    content: attr(aria-label);
+    background: var(--btn-bg-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+}
+
+@media (width >= 80em) {
+    
+
+  .btn-sm {
+    padding: .75rem 1.5rem;
+    font-size: var(--fs-base);
+  }
+
+  .btn-md {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+}
+@media (min-width: 376px) and (max-width: 490px) {
+  .btn-sm {
+    padding: calc(.5rem / 0.76) calc(1rem / 0.76);
+    font-size: calc(.875rem / 0.76);
+  }
+  
+  .btn-md {
+    padding: calc(.75rem / 0.76) calc(1.5rem / 0.76);
+    font-size: calc(0.75rem / 0.76);
+  }
+  
+  .btn-lg {
+    padding: calc(1rem / 0.76) calc(2rem / 0.76);
+    font-size: calc(1.125rem / 0.76);
+  } 
+  #pricing .btn-md {
+    padding: calc(.5rem / 0.76);
+    font-size: calc(.7rem / 0.76);
+  }
+}
+@media (min-width: 490px) and (max-width: 48rem) {
+  .btn-sm {
+    padding: calc(.5rem / 0.5) calc(1rem / 0.5);
+    font-size: calc(.875rem / 0.5);
+  }
+  
+  .btn-md {
+    padding: calc(.75rem / 0.5) calc(1.5rem / 0.5);
+    font-size: calc(1rem / 0.5);
+  }
+  
+  .btn-lg {
+    padding: calc(1rem / 0.5) calc(2rem / 0.5);
+    font-size: calc(1.125rem / 0.5);
+  }
+  #pricing .btn-md {
+    padding: calc(.75rem / 0.5) calc(.5rem / 0.5);
+    font-size: calc(.7rem / 0.5);
+  }
+}
