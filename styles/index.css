@@ -2,8 +2,11 @@
 @import url(layout.css);
 @import url(forms.css);
 @import url(fields/index.css);
+@import url(fields/buttons.css);
+@import url(fields/input.css);
+@import url(fields/checkbox.css);
+@import url(fields/radio.css);
 @import url(fields/droparea.css);
-@import url(radio.css);
 
 input,
 textarea,
