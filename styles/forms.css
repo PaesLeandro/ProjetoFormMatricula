@@ -30,6 +30,7 @@ legend {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
+    padding: 0 auto;
 }
 
 .input-wrapper,
@@ -122,11 +123,12 @@ button[type="submit"]:hover {
 .btn-secondary {
     width: auto;
     min-width: 7rem;
+    height: 2.2rem;
     padding: 0.65rem 1rem;
     border-radius: 0.5rem;
     font: 600 0.75rem var(--font-family);
     cursor: pointer;
-    border: none;
+    border: 1px solid transparent;
     transition: filter 0.2s, transform 0.1s;
     text-align: center;
     display: flex;
@@ -142,7 +144,7 @@ button[type="submit"]:hover {
 .btn-secondary {
     background: #fff;
     color: var(--text-primary);
-    border: 1px solid var(--stroke-default);
+    border-color: var(--stroke-default);
 }
 
 .btn-primary:hover,
