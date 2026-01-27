@@ -1,6 +1,12 @@
-/* styles/index.css */
 @import url(input.css)
 @import url(droparea.css);
 @import url(radio.css);
 @import url(checkbox.css);
 @import url(button.css);
+
+.actions-wrapper {
+  display: flex;
+  justify-content: center; /* Centraliza o grupo de botões */
+  gap: 1rem; /* Espaço entre os botões */
+  margin-top: 2rem;
+}

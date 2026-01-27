@@ -1,29 +1,50 @@
 button {
-    all: unset;
-    font-weight: 500;
-    color: var(--stroke-highlight);
-    padding: .75rem 1.5rem;
+  all: unset;
+  font-weight: 500;
+  cursor: pointer;
+
+  /* Centraliza o texto DENTRO do botão */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Arredondamento padrão para todos os botões */
+  border-radius: .5rem;
+
+  /* Estilo do Botão Vermelho (Primary) */
+  &.btn-primary {
+    color: white;
+    background-color: #E43A12;
+
+    /* Tamanho reduzido */
+    padding: .5rem 1rem;
+    font-size: 0.875rem;
+
+    /* Garante o arredondamento (caso precise forçar) */
     border-radius: .5rem;
-    cursor: pointer;
 
-    &.btn-primary {
-        color: white;
-        background-color: #E43A12
-
-        &:hover,
-        &:focus {
-          background-color: #F3541C;
-        }
+    &:hover,
+    &:focus {
+      background-color: #F3541C;
     }
+  }
 
-    &.btn-secondary {
-      margin-left: auto;
-      border: 1px solid var(--text-highlight);
+  /* Estilo do Botão Branco (Secondary) */
+  &.btn-secondary {
+    /* Borda Vermelha */
+    border: 1px solid #E43A12;
+    /* Texto Preto */
+    color: #292524;
 
-      &:hover,
-        &:focus {
-          color: #E43A12;
-          outline: .25rem solid var(--surface-secondary);
-        }
+    padding: .75rem 1.5rem;
+    /* Tamanho normal */
+
+    &:hover,
+    &:focus {
+      /* Fundo vermelho bem clarinho ao passar o mouse */
+      background-color: #fff0ec;
+      outline: .25rem solid var(--surface-secondary);
     }
+  }
 }

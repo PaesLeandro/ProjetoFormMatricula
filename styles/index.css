@@ -117,3 +117,10 @@ textarea:disabled {
 input:valid+.error {
     display: none;
 }
+
+.actions-wrapper {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 1rem; /* Espaço entre os botões */
+    margin-top: 2rem; /* Espaço acima dos botões */
+}
