@@ -92,3 +92,76 @@ aside {
     cursor: pointer;
     line-height: 1.4;
 }
+
+/* ========== MEDIA QUERIES - RESPONSIVIDADE ========== */
+
+/* Tablets e telas médias (até 1024px) */
+@media (max-width: 1024px) {
+    #app {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    main {
+        padding: 2rem 1.5rem;
+        min-height: 100vh;
+    }
+
+    aside {
+        padding: 3rem 2rem;
+        order: -1;
+        /* Aparece antes do main */
+    }
+
+    .aside-container h2 {
+        font-size: 2rem;
+        margin: 1.5rem 0 .75rem;
+    }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    .main-container {
+        max-width: 100%;
+    }
+
+    aside {
+        padding: 2rem 1rem;
+    }
+
+    .aside-container {
+        max-width: 100%;
+    }
+
+    .aside-container h2 {
+        font-size: 1.75rem;
+        margin: 1rem 0 .5rem;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    .back {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+    main {
+        padding: 1rem;
+    }
+
+    aside {
+        padding: 1.5rem 1rem;
+    }
+
+    .aside-container h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -84,3 +84,29 @@ label+.radio-wrapper {
     outline: 2px solid var(--stroke-highlight);
     background: var(--surface-secondary);
 }
+
+/* ========== MEDIA QUERIES - RESPONSIVIDADE ========== */
+
+/* Tablets e mobile (até 768px) */
+@media (max-width: 768px) {
+    .radio-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-inner label {
+        padding: 1rem;
+    }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+    .radio-inner label {
+        padding: .875rem;
+        gap: .375rem;
+    }
+
+    .radio-inner label img {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
