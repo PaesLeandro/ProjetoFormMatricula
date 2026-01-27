@@ -104,18 +104,7 @@ legend {
 }
 
 button[type="submit"] {
-    background-color: var(--stroke-highlight);
-    color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    font: 600 1rem var(--font-family);
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-button[type="submit"]:hover {
-    background-color: #E43A12;
+    all: unset;
 }
 
 .btn-primary,
@@ -134,6 +123,8 @@ button[type="submit"]:hover {
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .btn-primary {
