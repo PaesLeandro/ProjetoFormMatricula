@@ -3,10 +3,16 @@
 #app {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    width: 100%;
 }
 
-/* Aside aparece primeiro em mobile */
+/* Aside aparece primeiro em mobile - antes do main */
+main {
+    padding: 1.5rem 1rem;
+    order: 2;
+    flex: 1;
+}
+
 aside {
     background-color: var(--surface-secondary);
     padding: 2rem 1rem;
@@ -14,6 +20,24 @@ aside {
     flex-direction: column;
     justify-content: center;
     order: 1;
+}
+
+.main-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+h1 {
+    font: 600 1.25rem/1.25 var(--font-family);
+    margin-bottom: .5rem;
 }
 
 .aside-container {
@@ -46,39 +70,6 @@ aside {
 .aside-container img[alt="Ilustração"] {
     max-width: 100%;
     height: auto;
-}
-
-/* Main com formulário aparece depois */
-main {
-    padding: 1.5rem 1rem;
-    order: 2;
-}
-
-.main-container {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.back {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    margin-bottom: 1rem;
-    cursor: pointer;
-}
-
-h1 {
-    font: 600 1.25rem/1.25 var(--font-family);
-    margin-bottom: .5rem;
-}
-
-.checkbox-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: .75rem;
-    cursor: pointer;
 }
 
 .checkbox-wrapper input[type="checkbox"] {
@@ -178,19 +169,20 @@ h1 {
         overflow: hidden;
     }
 
+    main {
+        overflow-y: auto;
+        padding: 4rem 2rem;
+        order: 1;
+    }
+
     aside {
         padding: 4rem;
         order: 2;
+        height: 100vh;
     }
 
     .aside-container h2 {
         font-size: 2.5rem;
         margin: 2rem 0 1rem;
-    }
-
-    main {
-        overflow-y: auto;
-        padding: 4rem 2rem;
-        order: 1;
     }
 }
