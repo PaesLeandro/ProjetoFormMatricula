@@ -1,17 +1,61 @@
+/* ========== MOBILE FIRST - ESTILOS BASE (Mobile) ========== */
+
 #app {
-    display: grid;
-    grid-template-columns: 51.25% 48.75%;
-    height: 100vh;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Aside aparece primeiro em mobile */
+aside {
+    background-color: var(--surface-secondary);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 1;
+}
+
+.aside-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.aside-container header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.aside-container h2 {
+    font: 600 1.5rem/1.2 var(--font-family);
+    margin: 1rem 0 .5rem;
+}
+
+.aside-container h2 span {
+    color: var(--text-highlight);
+}
+
+.aside-container p {
+    font-size: .875rem;
+    margin-bottom: 1.5rem;
+}
+
+.aside-container img[alt="Ilustração"] {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Main com formulário aparece depois */
 main {
-    overflow-y: auto;
-    padding: 4rem 2rem;
+    padding: 1.5rem 1rem;
+    order: 2;
 }
 
 .main-container {
-    max-width: 33rem;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -19,35 +63,13 @@ main {
     display: flex;
     align-items: center;
     gap: .5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     cursor: pointer;
 }
 
 h1 {
-    font: 600 1.5rem/1.25 var(--font-family);
+    font: 600 1.25rem/1.25 var(--font-family);
     margin-bottom: .5rem;
-}
-
-aside {
-    background-color: var(--surface-secondary);
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.aside-container {
-    max-width: 31rem;
-    margin: 0 auto;
-}
-
-.aside-container h2 {
-    font: 600 2.5rem/1.1 var(--font-family);
-    margin: 2rem 0 1rem;
-}
-
-.aside-container h2 span {
-    color: var(--text-highlight);
 }
 
 .checkbox-wrapper {
@@ -93,75 +115,82 @@ aside {
     line-height: 1.4;
 }
 
-/* ========== MEDIA QUERIES - RESPONSIVIDADE ========== */
+/* ========== MEDIA QUERIES - MOBILE FIRST ========== */
 
-/* Tablets e telas médias (até 1024px) */
-@media (max-width: 1024px) {
-    #app {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-
-    main {
-        padding: 2rem 1.5rem;
-        min-height: 100vh;
-    }
-
+/* Tablets (a partir de 768px) */
+@media (min-width: 768px) {
     aside {
-        padding: 3rem 2rem;
-        order: -1;
-        /* Aparece antes do main */
-    }
-
-    .aside-container h2 {
-        font-size: 2rem;
-        margin: 1.5rem 0 .75rem;
-    }
-}
-
-/* Mobile (até 768px) */
-@media (max-width: 768px) {
-    main {
-        padding: 1.5rem 1rem;
-    }
-
-    .main-container {
-        max-width: 100%;
-    }
-
-    aside {
-        padding: 2rem 1rem;
-    }
-
-    .aside-container {
-        max-width: 100%;
+        padding: 2.5rem 2rem;
     }
 
     .aside-container h2 {
         font-size: 1.75rem;
-        margin: 1rem 0 .5rem;
+        margin: 1.25rem 0 .75rem;
+    }
+
+    .aside-container p {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 2rem 1.5rem;
     }
 
     h1 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
 
     .back {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 }
 
-/* Mobile pequeno (até 480px) */
-@media (max-width: 480px) {
-    main {
-        padding: 1rem;
+/* Tablets grandes (a partir de 1024px) */
+@media (min-width: 1024px) {
+    aside {
+        padding: 3rem 2rem;
     }
 
-    aside {
-        padding: 1.5rem 1rem;
+    .aside-container {
+        max-width: 31rem;
     }
 
     .aside-container h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        margin: 1.5rem 0 1rem;
+    }
+
+    main {
+        padding: 3rem 2rem;
+    }
+
+    .main-container {
+        max-width: 33rem;
+    }
+}
+
+/* Desktop (a partir de 1200px) - Layout lado a lado */
+@media (min-width: 1200px) {
+    #app {
+        display: grid;
+        grid-template-columns: 51.25% 48.75%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    aside {
+        padding: 4rem;
+        order: 2;
+    }
+
+    .aside-container h2 {
+        font-size: 2.5rem;
+        margin: 2rem 0 1rem;
+    }
+
+    main {
+        overflow-y: auto;
+        padding: 4rem 2rem;
+        order: 1;
     }
 }
