@@ -4,10 +4,6 @@
     box-sizing: border-box;
     }
 
-    body {
-        background-color: deeppink;
-    }
-
     :root {
         --snitap-sun: #FFCD1E;
         --snitap-sky-mid: #06B6D4;
@@ -44,4 +40,9 @@
     h2 {
         font-size: var(--text-lg);
         line-height: 1.2;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
     }
